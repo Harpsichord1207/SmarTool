@@ -5,7 +5,7 @@ read_me = pathlib.Path(__file__).parent.joinpath('README.md').read_text()
 
 setup_args = {
     'name': 'SmarTool',
-    'version': '1.0.1',
+    'version': '1.0.2',
     'description': 'A set of tools that keep Python sweeter.',
     'long_description': read_me,
     'long_description_content_type': 'text/markdown',
@@ -17,7 +17,7 @@ setup_args = {
     'url': 'https://github.com/Harpsichord1207/SmarTool',
     'install_requires': [],
     'classifiers': [
-        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.8',
         'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)',
         'Intended Audience :: Developers'
     ],
