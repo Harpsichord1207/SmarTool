@@ -5,7 +5,7 @@ read_me = pathlib.Path(__file__).parent.joinpath('README.md').read_text()
 
 setup_args = {
     'name': 'SmarTool',
-    'version': '1.0.2',
+    'version': '1.0.3',
     'description': 'A set of tools that keep Python sweeter.',
     'long_description': read_me,
     'long_description_content_type': 'text/markdown',
