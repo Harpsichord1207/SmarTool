@@ -17,7 +17,7 @@ import random
 import requests
 from SmarTool import retry
 
-# 默认重试5次，每次间隔2秒，所以异常都重试
+# 默认重试5次，每次间隔2秒，所有异常都重试
 @retry
 def div1(a, b):
     return a / random.choice([0, 1, b])
