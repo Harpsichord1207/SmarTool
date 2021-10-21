@@ -26,7 +26,12 @@ def timeout(func=None, /,  seconds=5):
         def inner(*args, **kwargs):
             signal.signal(signal.SIGALRM, handler)
             signal.alarm(seconds)
-            return f(*args, **kwargs)
+            try:
+                return f(*args, **kwargs)
+            except Exception:
+                raise
+            finally:
+                signal.signal(signal.SIGALRM, signal.SIG_IGN)
 
         return inner
 
