@@ -42,5 +42,23 @@ def get():
 get()
 ```
 
+### 2. Timeout - 超时工具
+
+```python
+import time
+from SmarTool import timeout
+
+# 默认超时时间为5秒，函数执行时间超过5秒抛出TimeoutException
+@timeout
+def f1():
+    time.sleep(6)
+f1()
+
+# 自定义超时时间为10秒
+@timeout(10)
+def f2():
+    time.sleep(6)
+f2()
+```
 
 [1]: https://github.com/dromara/hutool
