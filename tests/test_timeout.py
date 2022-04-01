@@ -1,3 +1,4 @@
+import sys
 import time
 import unittest
 
@@ -6,7 +7,12 @@ from src import timeout, TimeoutException
 
 class TestTimeout(unittest.TestCase):
 
+    is_win32 = sys.platform == 'win32'
+
     def test_timeout(self):
+
+        if self.is_win32:
+            return
 
         @timeout
         def f1():

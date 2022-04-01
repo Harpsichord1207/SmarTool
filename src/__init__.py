@@ -1,4 +1,5 @@
 import logging
+import sys
 
 from .dtutil import DTUtil
 from .retry import retry
@@ -8,7 +9,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s: %(m
 
 
 def hello():
-    welcome_msg = "======= Hello, this is SmarTool! ======="
+    welcome_msg = "========= Hello, this is SmarTool! ========="
     print(welcome_msg)
     print(" Author: Harpsichord")
     print(" Email: tliu1217@163.com")
@@ -17,4 +18,12 @@ def hello():
     print("=" * len(welcome_msg))
 
 
-__all__ = [retry.__name__, hello.__name__, timeout.__name__, TimeoutException.__name__]
+if sys.platform == 'win32':
+    w_msg = '\n' + '---' * 30
+    w_msg += '\nYou are using win32 platform, the following module is not supported yet:'
+    w_msg += '\n    - timeout'
+    w_msg += '\n' + '---' * 30
+    logging.warning(w_msg)
+
+
+__all__ = [retry.__name__, hello.__name__, timeout.__name__, TimeoutException.__name__, DTUtil.__name__]

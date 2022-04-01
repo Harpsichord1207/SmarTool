@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import functools
 import signal
+import sys
 
 
 class TimeoutException(Exception):
@@ -14,6 +15,9 @@ class TimeoutException(Exception):
 
 
 def timeout(func=None, /,  seconds=5):
+
+    if sys.platform == 'win32':
+        raise NotImplementedError('Timeout Not support win32 platform currently.')
 
     seconds = int(seconds)
 

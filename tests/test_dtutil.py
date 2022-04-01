@@ -4,7 +4,7 @@ import unittest
 from src import DTUtil
 
 
-class TestTimeout(unittest.TestCase):
+class TestDTUtil(unittest.TestCase):
 
     fmt1 = "%Y-%m-%d"
 

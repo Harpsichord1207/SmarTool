@@ -10,12 +10,12 @@ SmarTool是一个小而全的Python工具类库，类似Java的[Hutool][1]。
 ```commandline
 >>> import SmarTool
 >>> SmarTool.hello()
-===== Hello, this is SmarTool! =====
+======= Hello, this is SmarTool! =======
  Author: Harpsichord
  Email: tliu1217@163.com
  Install: pip install SmarTool
  Github: https://github.com/Harpsichord1207/SmarTool
-====================================
+========================================
 ```
 
 ## 使用
