@@ -15,7 +15,7 @@ class TestTimeout(unittest.TestCase):
         with self.assertRaises(TimeoutException):
             f1()
 
-        @timeout(20)
+        @timeout(seconds=20)
         def f2():
             time.sleep(10)
             return True

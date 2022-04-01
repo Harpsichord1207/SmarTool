@@ -1,6 +1,6 @@
 import logging
 
-from .datetime import DTUtil
+from .dtutil import DTUtil
 from .retry import retry
 from .timeout import TimeoutException, timeout
 
@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s: %(m
 
 
 def hello():
-    welcome_msg = "===== Hello, this is SmarTool! ====="
+    welcome_msg = "======= Hello, this is SmarTool! ======="
     print(welcome_msg)
     print(" Author: Harpsichord")
     print(" Email: tliu1217@163.com")
