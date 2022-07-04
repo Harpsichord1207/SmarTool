@@ -92,4 +92,41 @@ print(DTUtil.first_day_of_month(date).strftime("%Y-%m-%d"))  # Out: 2022-03-01
 print(DTUtil.last_day_of_month(date).strftime("%Y-%m-%d"))  # Out: 2022-03-31
 ```
 
+### 4. Flatter - 数据打平工具
+
+```python
+from SmarTool import Flatter
+
+# 打平list
+data = [1, (2, [3, 4, (5, 6)])]
+Flatter.flat_list(data)  # Out: [1, 2, 3, 4, 5, 6]
+
+# 打平dict
+data = {1: 2, 3: {4: 5, 6: [7, 8]}}
+Flatter.flat_dict(data)  # Out: {1: 2, '3_4': 5, '3_6_0': 7, '3_6_1': 8}
+
+# 打平复杂的dict
+data = {
+    'k1': 'v1',
+    'k2_list': [
+        {'v2': 'v3'},
+        {'v4': 'v5'},
+    ],
+    'k3': {
+        'k4': ['k5', {'k6': 'k7'}],
+        'k8': 'k9'
+    }
+}
+Flatter.flat_dict(data)
+# Out: 
+# {
+#     'k1': 'v1',
+#     'k2_list_0_v2': 'v3',
+#     'k2_list_1_v4': 'v5',
+#     'k3_k4_0': 'k5',
+#     'k3_k4_1_k6': 'k7',
+#     'k3_k8': 'k9'
+# }
+```
+
 [1]: https://github.com/dromara/hutool
