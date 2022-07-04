@@ -1,6 +1,7 @@
 import logging
 
 from .datetime import DTUtil
+from .flatter import Flatter
 from .retry import retry
 from .timeout import TimeoutException, timeout
 
@@ -17,4 +18,4 @@ def hello():
     print("=" * len(welcome_msg))
 
 
-__all__ = [retry.__name__, hello.__name__, timeout.__name__, TimeoutException.__name__]
+__all__ = [retry.__name__, hello.__name__, timeout.__name__, TimeoutException.__name__, Flatter.__name__]
