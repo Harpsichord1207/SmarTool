@@ -1,7 +1,7 @@
 import logging
 import sys
 
-from .datetime import DTUtil
+from .dtutil import DTUtil
 from .flatter import Flatter
 from .retry import retry
 from .timeout import TimeoutException, timeout
