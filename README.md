@@ -7,6 +7,16 @@ SmarTool是一个小而全的Python工具类库，类似Java的[Hutool][1]。
 ## 安装
 
 `pip install SmarTool`
+```commandline
+>>> import SmarTool
+>>> SmarTool.hello()
+======= Hello, this is SmarTool! =======
+ Author: Harpsichord
+ Email: tliu1217@163.com
+ Install: pip install SmarTool
+ Github: https://github.com/Harpsichord1207/SmarTool
+========================================
+```
 
 ## 使用
 
@@ -55,10 +65,31 @@ def f1():
 f1()
 
 # 自定义超时时间为10秒
-@timeout(10)
+@timeout(seconds=10)
 def f2():
     time.sleep(6)
 f2()
+```
+
+### 3. DTUtil - 日期工具
+
+```python
+import datetime
+from SmarTool import DTUtil
+
+# 当前日期增加一个月
+print(DTUtil.add_month().strftime("%Y-%m-%d"))  # Out: 2022-05-01
+
+# 指定日期增加10个月
+date = datetime.datetime.strptime("2022-04-01", "%Y-%m-%d")
+print(DTUtil.add_month(date, months=10).strftime("%Y-%m-%d"))  # Out: 2023-02-01
+
+# 获取某个日期当月第一天
+date = datetime.datetime.strptime("2022-03-22", "%Y-%m-%d")
+print(DTUtil.first_day_of_month(date).strftime("%Y-%m-%d"))  # Out: 2022-03-01
+
+# 获取某个日期当月最后一天
+print(DTUtil.last_day_of_month(date).strftime("%Y-%m-%d"))  # Out: 2022-03-31
 ```
 
 [1]: https://github.com/dromara/hutool
